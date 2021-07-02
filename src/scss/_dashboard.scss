@@ -1,0 +1,97 @@
+#flex-dashboard {
+    @extend .d-flex, .flex-column, .align-items-start, .min-vw-100, .min-vh-100, .w-100;
+
+    #navWraper {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        @extend .min-vw-100, .min-vh-100, .position-absolute;
+
+        .nav-main {
+            @extend .w-75, .min-vh-100, .bg-light;
+
+            &-item {
+                padding: 1rem;
+                background-color: $gray-300;
+
+                &:hover {
+                    background-color: $gray-400;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $gray-700;
+                }
+            }
+
+            &-title {
+                padding: 1rem;
+                background-color: $gray-500;
+            }
+        }
+    }
+
+    header {
+        @extend .d-flex;
+    }
+
+    #outer {
+        -webkit-box-flex: 1;
+        flex: 1;
+    }
+}
+
+#root {
+    #main-menu {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100vw;
+        background-color: #fff;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: fixed;
+        z-index: 1;
+
+        .navwrap {
+            @extend .d-flex, .flex-column;
+
+            &-item {
+                @extend .p-2, .d-flex, .justify-content-start, .align-items-center, .border-bottom;
+                background-color: #fff;
+
+                .icon {
+                    @extend .me-2, .d-flex, .align-items-center, .justify-content-center;
+                    width: 25px;
+                    height: 25px;
+                    max-width: 25px;
+                    max-height: 25px;
+                }
+            }
+
+            .space {
+                height: 15px;
+                background-color: $brand-primary-10;
+                @extend .border-bottom;
+            }
+        }
+    }
+
+    #footer {
+        color: $gray-600;
+        font-size: small;
+        @extend .min-vw-100, .border-top, .py-3;
+
+        .copyright {
+            line-height: 1.6;
+            @extend .w-100, .text-center;
+        }
+
+        .terms {
+            line-height: 1.6;
+            @extend .w-100, .text-center;
+
+            &-link {
+                @extend .btn-link, .mx-2;
+            }
+        }
+    }
+}

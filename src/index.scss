@@ -1,0 +1,10 @@
+// overide variable in bootstrap
+@import "scss/variables";
+
+//Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// overide style
+@import "scss/dashboard";
+@import "scss/global";
+@import "scss/modal";
