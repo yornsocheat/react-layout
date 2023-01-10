@@ -1,9 +1,3 @@
-import Card from './Card'
-import List from './List'
-import Table from './Table'
+import Table from './Table';
 
-export {
-    Card,
-    List,
-    Table
-}
+export { Table };
