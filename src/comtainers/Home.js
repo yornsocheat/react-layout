@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Button } from 'reactstrap';
-import _ from 'lodash';
 
-import { Footer, Nav, Display, Heading, Card, ListGroup } from '../components';
-import { Table } from '../components/General';
+import { Footer, Nav, Display, Heading, Card, Table } from '../components';
 import { UPDATE_NAV_MODE } from '../libraries/store/actions';
 
 class Home extends Component {
@@ -33,6 +31,42 @@ class Home extends Component {
 		);
 	};
 
+	renderDisplay = () => {
+		return (
+			<Card className="p-3">
+				<Display size="1">Display 1</Display>
+				<Display size="2">Display 2</Display>
+				<Display size="3">Display 3</Display>
+				<Display size="4">Display 4</Display>
+				<Display size="5">Display 5</Display>
+				<Display size="6">Display 6</Display>
+			</Card>
+		);
+	};
+
+	renderHeading = () => {
+		return (
+			<Card className="p-3">
+				<Heading>Tag h1 and style h1</Heading>
+				<Heading tag="h1">Tag h1 and style h1</Heading>
+				<Heading tag="h2">Tag h2 and style h2</Heading>
+				<Heading tag="h3">Tag h3 and style h3</Heading>
+				<Heading tag="h4">Tag h4 and style h4</Heading>
+				<Heading tag="h5">Tag h5 and style h5</Heading>
+				<Heading tag="h6">Tag h6 and style h6</Heading>
+				<Heading tag="p" className="h1">
+					Tag p and style h1
+				</Heading>
+				<Heading tag="div" className="h1">
+					Tag div and style h1
+				</Heading>
+				<Heading tag="span" className="h1">
+					Tag span and style h1
+				</Heading>
+			</Card>
+		);
+	};
+
 	renderContent = () => {
 		return (
 			<div className="wraper">
@@ -57,16 +91,8 @@ class Home extends Component {
 							{ name: 'Panha', phone: '092 244 111' },
 						]}
 					/>
-					<Display size="1">Display 1</Display>
-					<Display size="2">Display 2</Display>
-					<Display size="3">Display 3</Display>
-					<Display size="4">Display 4</Display>
-					<Display size="5">Display 5</Display>
-					<Display size="6">Display 6</Display>
-					<Heading>Tag h1 and style h1</Heading>
-					<Heading tag="p" className="h1">
-						Tag h1 and style h1
-					</Heading>
+					{this.renderDisplay()}
+					{this.renderHeading()}
 				</div>
 				<Footer />
 			</div>
@@ -75,12 +101,6 @@ class Home extends Component {
 
 	render() {
 		const { navMode } = this.props;
-		console.log(
-			_.toArray([
-				{ name: 'Socheat', phone: '012 233 555' },
-				{ name: 'Panha', phone: '092 244 111' },
-			])
-		);
 
 		return navMode ? this.renderNav() : this.renderContent();
 	}
